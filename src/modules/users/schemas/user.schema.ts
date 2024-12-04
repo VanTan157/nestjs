@@ -5,8 +5,6 @@ export type UserDocument = HydratedDocument<User>;
 
 @Schema({ timestamps: true })
 export class User {
-    @Prop()
-    name: string;
 
     @Prop()
     email: string;
@@ -14,23 +12,23 @@ export class User {
     @Prop()
     password: string;
 
-    @Prop()
+    @Prop({default: ''})
     phone: string;
 
-    @Prop()
+    @Prop({default:""})
     address: string;
 
-    @Prop()
+    @Prop({default:""})
     image: string;
 
-    @Prop()
+    @Prop({default: "USER"})
     role: string;
 
     @Prop()
     accountType: string;
 
-    @Prop()
-    isActive: string;
+    @Prop({default: false})
+    isActive: boolean;
 
     @Prop()
     codeId: string;
